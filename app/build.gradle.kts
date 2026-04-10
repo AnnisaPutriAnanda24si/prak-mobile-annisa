@@ -8,6 +8,12 @@ android {
         version = release(36)
     }
 
+    //gradle tiap berubah harus di syc
+
+    buildFeatures{
+        viewBinding = true
+    }
+
     defaultConfig {
         applicationId = "com.example.nisaapps"
         minSdk = 28
