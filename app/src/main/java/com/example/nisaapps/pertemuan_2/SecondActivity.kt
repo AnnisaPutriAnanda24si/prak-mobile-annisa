@@ -10,8 +10,10 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.example.nisaapps.R
+import com.example.nisaapps.databinding.ActivitySecondBinding
 
 class SecondActivity : AppCompatActivity() {
+    private lateinit var binding: ActivitySecondBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -21,17 +23,22 @@ class SecondActivity : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
+        binding.btnSubmit.setOnClickListener {
+            val no = binding.inputNama.text
+            Toast.makeText(this, "Nomor anda adalah = $no", Toast.LENGTH_SHORT).show()
+
+        }
 
         // Inisialisasi komponen
-        val inputNama: EditText = findViewById(R.id.inputNama)
-        val btnSubmit: Button = findViewById(R.id.btnSubmit)
-
-        btnSubmit.setOnClickListener {
-            //Mengambil value dari inputNama dan menampilkan di Logcat
-            val nama = inputNama.text
-            Log.e("Klik btnSubmit","Tombol berhasil di tekan. Isi dari inputNama = $nama")
-
-            Toast.makeText(this, "Anda telah melakukan klik pada tombol Submit dengan nama = $nama", Toast.LENGTH_LONG).show()
-        }
+//        val inputNama: EditText = findViewById(R.id.inputNama)
+//        val btnSubmit: Button = findViewById(R.id.btnSubmit)
+//
+//        btnSubmit.setOnClickListener {
+//            //Mengambil value dari inputNama dan menampilkan di Logcat
+//            val nama = inputNama.text
+//            Log.e("Klik btnSubmit","Tombol berhasil di tekan. Isi dari inputNama = $nama")
+//
+//            Toast.makeText(this, "Anda telah melakukan klik pada tombol Submit dengan nama = $nama", Toast.LENGTH_LONG).show()
+//        }
     }
 }
