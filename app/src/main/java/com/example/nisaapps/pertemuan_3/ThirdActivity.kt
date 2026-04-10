@@ -17,7 +17,7 @@ class ThirdActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
 //        setContentView(R.layout.activity_third)
-//        ubah jadi ini
+//        ubah jadi ini u
         binding = ActivityThirdBinding.inflate(layoutInflater)
         setContentView(binding.root)
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
