@@ -1,25 +1,21 @@
-package com.example.nisaapps.pertemuan_3
+package com.example.nisaapps.pertemuan_4
 
 import android.content.Intent
 import android.os.Bundle
-import android.widget.Button
-import android.widget.EditText
-import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import com.example.nisaapps.MainActivity
 import com.example.nisaapps.R
-import com.example.nisaapps.databinding.ActivityThirdBinding
+import com.example.nisaapps.databinding.ActivityFourthBinding
+import com.example.nisaapps.databinding.ActivityMainBinding
 
-class ThirdActivity : AppCompatActivity() {
-    private lateinit var binding: ActivityThirdBinding
+class FourthActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
-//        setContentView(R.layout.activity_third)
-//        ubah jadi ini u
-        binding = ActivityThirdBinding.inflate(layoutInflater)
+        lateinit var binding: ActivityFourthBinding
+        binding = ActivityFourthBinding.inflate(layoutInflater)
         setContentView(binding.root)
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
@@ -27,5 +23,12 @@ class ThirdActivity : AppCompatActivity() {
             insets
         }
 
+        binding.buttonBack.setOnClickListener {
+            val intent = Intent(this, MainActivity::class.java)
+            startActivity(intent)
+
+        }
+
+        }
+
     }
-}
