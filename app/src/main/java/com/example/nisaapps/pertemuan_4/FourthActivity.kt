@@ -3,6 +3,7 @@ package com.example.nisaapps.pertemuan_4
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
+import android.view.MenuItem
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -19,6 +20,13 @@ class FourthActivity : AppCompatActivity() {
         binding = ActivityFourthBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        setSupportActionBar(binding.toolbar)
+        supportActionBar?.apply {
+            title = "Activity Fifth"
+            subtitle = "Ini adalah subtitle"
+            setDisplayHomeAsUpEnabled(true)
+            setDisplayShowHomeEnabled(true)
+
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
@@ -30,11 +38,13 @@ class FourthActivity : AppCompatActivity() {
         val age = intent.getIntExtra("usia",0)
         Log.e("Data Intent","Nama: $name , Usia: $age, Asal: $from")
 
-        binding.buttonBack.setOnClickListener {
-//            val intent = Intent(this, MainActivity::class.java)
-//            startActivity(intent)
-            finish()
-        }
+//        binding.buttonBack.setOnClickListener {
+////            val intent = Intent(this, MainActivity::class.java)
+////            startActivity(intent)
+//            finish()
+//        }
+
+
 
         Log.e("onCreate", "FourthActivity dibuat pertama kali")
 
@@ -50,4 +60,17 @@ class FourthActivity : AppCompatActivity() {
         Log.e("onDestroy", "FourthActivity dihapus dari stack")
     }
 
+
     }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        return when (item.itemId) {
+            android.R.id.home -> {
+                onBackPressedDispatcher.onBackPressed()
+                true
+            }
+
+            else -> super.onOptionsItemSelected(item)
+        }
+    }
+}

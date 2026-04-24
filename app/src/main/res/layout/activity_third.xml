@@ -7,6 +7,14 @@
     android:layout_height="match_parent"
     tools:context=".pertemuan_3.ThirdActivity">
 
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="?attr/colorPrimary"
+        app:titleTextColor="@android:color/white"
+        app:subtitleTextColor="@android:color/white" />
+
     <Button
         android:id="@+id/btnKirim"
         android:layout_width="wrap_content"
