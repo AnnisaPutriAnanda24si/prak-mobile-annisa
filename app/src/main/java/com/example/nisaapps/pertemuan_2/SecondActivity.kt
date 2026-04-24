@@ -1,47 +1,46 @@
 package com.example.nisaapps.pertemuan_2
 
 import android.os.Bundle
-import android.util.Log
-import android.widget.Button
-import android.widget.EditText
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
-import com.example.nisaapps.R
 import com.example.nisaapps.databinding.ActivitySecondBinding
-import com.example.nisaapps.databinding.ActivityThirdBinding
 
 class SecondActivity : AppCompatActivity() {
+
     private lateinit var binding: ActivitySecondBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
+
+        // 1. Inisialisasi Binding
         binding = ActivitySecondBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        // 2. Setup Toolbar
         setSupportActionBar(binding.toolbar)
         supportActionBar?.apply {
-            title = "Activity Fifth"
+            title = "Activity Second"
             subtitle = "Ini adalah subtitle"
             setDisplayHomeAsUpEnabled(true)
             setDisplayShowHomeEnabled(true)
+        } // Tutup apply
+
+        // 3. Setup Button Listener (DI LUAR blok apply)
         binding.btnSubmit.setOnClickListener {
-            val no = binding.inputNama.text
-            Toast.makeText(this, "Nomor anda adalah = $no", Toast.LENGTH_SHORT).show()
-
+            val no = binding.inputNama.text.toString()
+            if (no.isNotEmpty()) {
+                Toast.makeText(this, "Nomor anda adalah = $no", Toast.LENGTH_SHORT).show()
+            } else {
+                Toast.makeText(this, "Silakan isi nama/nomor dulu", Toast.LENGTH_SHORT).show()
+            }
         }
+    } // Tutup onCreate
 
-        // Inisialisasi komponen
-//        val inputNama: EditText = findViewById(R.id.inputNama)
-//        val btnSubmit: Button = findViewById(R.id.btnSubmit)
-//
-//        btnSubmit.setOnClickListener {
-//            //Mengambil value dari inputNama dan menampilkan di Logcat
-//            val nama = inputNama.text
-//            Log.e("Klik btnSubmit","Tombol berhasil di tekan. Isi dari inputNama = $nama")
-//
-//            Toast.makeText(this, "Anda telah melakukan klik pada tombol Submit dengan nama = $nama", Toast.LENGTH_LONG).show()
-//        }
+    // 4. Tambahkan ini supaya tombol back di toolbar berfungsi
+    override fun onSupportNavigateUp(): Boolean {
+        onBackPressedDispatcher.onBackPressed()
+        return true
     }
 }
