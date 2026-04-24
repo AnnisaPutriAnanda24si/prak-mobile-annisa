@@ -32,8 +32,6 @@ class FifthActivity : AppCompatActivity() {
             setDisplayShowHomeEnabled(true)
         }
 
-        // 2. Logic Scroll Progress Bar
-        // Menggunakan binding.nestedScrollView secara langsung untuk menghindari error getChildAt
         binding.nestedScrollView.setOnScrollChangeListener { _, _, scrollY, _, _ ->
             val child = binding.nestedScrollView.getChildAt(0)
             if (child != null) {
@@ -62,6 +60,7 @@ class FifthActivity : AppCompatActivity() {
             val intent = Intent(this, WebViewActivity::class.java)
             startActivity(intent)
         }
+
         var isFavorite = false
         binding.imgFavorite.setOnClickListener {
             if (!isFavorite) {
@@ -102,7 +101,6 @@ class FifthActivity : AppCompatActivity() {
                 true
             }
             R.id.sub_menu_dark_mode -> {
-                // IMPROVISASI: Logika untuk mengubah status centang
                 item.isChecked = !item.isChecked
                 val status = if (item.isChecked) "ON" else "OFF"
                 Toast.makeText(this, "Mode Gelap: $status", Toast.LENGTH_SHORT).show()

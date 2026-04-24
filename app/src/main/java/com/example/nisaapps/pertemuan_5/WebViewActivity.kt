@@ -34,7 +34,6 @@ class WebViewActivity : AppCompatActivity() {
         binding.webView.settings.javaScriptEnabled = true
         binding.webView.loadUrl("https://merdeka.com")
 
-        // IMPROVISASI 2: Error Handling (Jika internet mati)
         binding.webView.webViewClient = object : WebViewClient() {
             override fun onReceivedError(view: WebView?, request: WebResourceRequest?, error: WebResourceError?) {
                 Toast.makeText(this@WebViewActivity, "Gagal memuat halaman. Cek koneksi internet Anda!", Toast.LENGTH_LONG).show()
