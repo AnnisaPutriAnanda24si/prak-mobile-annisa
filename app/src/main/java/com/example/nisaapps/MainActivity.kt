@@ -3,17 +3,12 @@ package com.example.nisaapps
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
-import android.widget.Toast
-import androidx.activity.enableEdgeToEdge
-import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AlertDialog.Builder
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.example.nisaapps.databinding.ActivityMainBinding
-import com.example.nisaapps.databinding.ActivityThirdBinding
-import com.example.nisaapps.pertemuan_4.FourthActivity
-import com.example.nisaapps.pertemuan_7.SeventhActivity
+import com.example.nisaapps.Home.pertemuan_7.SeventhActivity
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
@@ -54,9 +49,6 @@ class MainActivity : AppCompatActivity() {
                 }
                 .show()
         }
-
-
-
         binding.btnToSeven.setOnClickListener {
             val intent = Intent(this, SeventhActivity::class.java)
             startActivity(intent)

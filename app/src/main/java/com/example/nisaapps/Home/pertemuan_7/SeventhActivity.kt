@@ -1,13 +1,10 @@
-package com.example.nisaapps.pertemuan_7
+package com.example.nisaapps.Home.pertemuan_7
 
 import android.os.Bundle
 import android.view.MenuItem
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 import androidx.fragment.app.Fragment
-import com.example.nisaapps.R
 import com.example.nisaapps.databinding.ActivitySeventhBinding
 
 class SeventhActivity : AppCompatActivity() {

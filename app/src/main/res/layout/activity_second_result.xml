@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#009688"
-    tools:context=".pertemuan_2.SecondResultActivity">
+    tools:context=".Home.pertemuan_2.SecondResultActivity">
 
     <TextView
         android:id="@+id/textView"
