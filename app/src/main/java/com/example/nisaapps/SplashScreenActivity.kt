@@ -17,9 +17,9 @@ class SplashScreenActivity : AppCompatActivity() {
         enableEdgeToEdge()
         setContentView(R.layout.activity_splash_screen)
         lifecycleScope.launch {
-            delay(2000) //simulasi pengambilan data selama 2 detik
+            delay(2000)
 
-            var intent = Intent(this@SplashScreenActivity, MainActivity::class.java)
+            var intent = Intent(this@SplashScreenActivity, AuthActivity::class.java)
             startActivity(intent)
             finish()
         }

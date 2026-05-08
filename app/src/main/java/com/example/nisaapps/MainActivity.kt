@@ -13,6 +13,7 @@ import androidx.core.view.WindowInsetsCompat
 import com.example.nisaapps.databinding.ActivityMainBinding
 import com.example.nisaapps.databinding.ActivityThirdBinding
 import com.example.nisaapps.pertemuan_4.FourthActivity
+import com.example.nisaapps.pertemuan_7.SeventhActivity
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
@@ -54,13 +55,11 @@ class MainActivity : AppCompatActivity() {
                 .show()
         }
 
-//        binding.btnToFourth.setOnClickListener {
-//            val intent = Intent(this, FourthActivity::class.java)
-//            /*tambahkan bagian berikut*/
-//            intent.putExtra("nama", "Politeknik Caltex Riau")
-//            intent.putExtra("asal", "Rumbai")
-//            intent.putExtra("usia", 25)
-//            startActivity(intent)
-//        }
+
+
+        binding.btnToSeven.setOnClickListener {
+            val intent = Intent(this, SeventhActivity::class.java)
+            startActivity(intent)
+        }
     }
 }
