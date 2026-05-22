@@ -2,6 +2,7 @@ package com.example.nisaapps.Home.pertemuan_9
 
 import android.os.Bundle
 import android.view.MenuItem
+import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -9,6 +10,7 @@ import androidx.core.view.WindowInsetsCompat
 import com.example.nisaapps.R
 import com.example.nisaapps.databinding.ActivityNinthBinding
 import com.example.nisaapps.databinding.ActivitySeventhBinding
+import com.google.android.material.chip.Chip
 
 class NinthActivity : AppCompatActivity() {
     private  lateinit var binding: ActivityNinthBinding

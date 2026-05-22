@@ -7,6 +7,15 @@
     tools:context=".Home.HomeFragment"
     android:background="#FFBEBE">
 
+    <View
+        android:id="@+id/background_header"
+        android:layout_width="0dp"
+        android:layout_height="100dp"
+        android:background="@drawable/bg_header_wave"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
     <!-- TODO: Update blank fragment layout -->
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
