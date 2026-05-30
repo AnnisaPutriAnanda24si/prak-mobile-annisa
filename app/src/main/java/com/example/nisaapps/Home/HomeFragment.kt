@@ -9,6 +9,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.appcompat.app.AlertDialog.Builder
 import androidx.appcompat.app.AppCompatActivity
+import com.example.nisaapps.Home.pertemuan_10.TenthActivity
 import com.example.nisaapps.Home.pertemuan_7.SeventhActivity
 import com.example.nisaapps.Home.pertemuan_9.NinthActivity
 import com.example.nisaapps.R
@@ -51,6 +52,10 @@ class HomeFragment : Fragment() {
         }
         binding.btnToNine.setOnClickListener {
             val intent = Intent(requireContext(), NinthActivity::class.java)
+            startActivity(intent)
+        }
+        binding.btnToTen.setOnClickListener {
+            val intent = Intent(requireContext(), TenthActivity::class.java)
             startActivity(intent)
         }
         binding.btnLogout.setOnClickListener {
