@@ -79,10 +79,10 @@ class MoreFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
 
-//        (requireActivity() as AppCompatActivity).setSupportActionBar(binding.toolbar)
-//        (requireActivity() as AppCompatActivity).supportActionBar?.apply {
-//            title = "More"
-//        }
+        (requireActivity() as AppCompatActivity).setSupportActionBar(binding.toolbar)
+        (requireActivity() as AppCompatActivity).supportActionBar?.apply {
+            title = "More"
+        }
 //        /* Definisikan adapter sebagai penghubung dataList dengan layout simple_list_item_1 */
 //        val adapter = ArrayAdapter(
 //            requireContext(),

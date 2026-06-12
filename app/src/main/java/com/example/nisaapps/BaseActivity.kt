@@ -10,6 +10,7 @@ import androidx.fragment.app.Fragment
 import com.example.nisaapps.Home.HomeFragment
 import com.example.nisaapps.Message.MessageFragment
 import com.example.nisaapps.More.MoreFragment
+import com.example.nisaapps.Note.NoteFragment
 import com.example.nisaapps.databinding.ActivityBaseBinding
 
 class BaseActivity : AppCompatActivity() {
@@ -37,6 +38,12 @@ class BaseActivity : AppCompatActivity() {
                 R.id.more -> {
 //                    Toast.makeText(this, "More Clicked", Toast.LENGTH_SHORT).show()
                     replaceFragment(MoreFragment())
+                    true
+
+                }
+                R.id.note -> {
+//                    Toast.makeText(this, "More Clicked", Toast.LENGTH_SHORT).show()
+                    replaceFragment(NoteFragment())
                     true
 
                 }
