@@ -14,6 +14,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.NisaApps">
         <activity
+            android:name=".Note.NoteFormActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Message.tutorial.TutorialMessageActivity"
+            android:exported="false" />
+        <activity
             android:name=".Home.Pertemuan_13.ThirteenthActivity"
             android:exported="false" />
         <activity
