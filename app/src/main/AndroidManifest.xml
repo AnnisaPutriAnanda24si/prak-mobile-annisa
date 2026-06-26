@@ -19,11 +19,18 @@
             android:name=".Home.pertemuan_3.ThirdResultActivity"
             android:exported="false" />
 
+        <receiver
+            android:name=".utils.ReminderReceiver"
+            android:exported="false"/>
+
+
         <provider
             android:name="androidx.core.content.FileProvider"
             android:authorities="${applicationId}.fileprovider"
             android:exported="false"
             android:grantUriPermissions="true">
+
+
             <meta-data
                 android:name="android.support.FILE_PROVIDER_PATHS"
                 android:resource="@xml/file_paths" />
