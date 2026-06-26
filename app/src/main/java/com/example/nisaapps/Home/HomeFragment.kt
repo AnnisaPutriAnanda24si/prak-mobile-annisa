@@ -14,6 +14,7 @@ import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.nisaapps.Home.Pertemuan_13.ThirteenthActivity
 import com.example.nisaapps.Home.pertemuan_10.TenthActivity
+import com.example.nisaapps.Home.pertemuan_3.ThirdActivity
 import com.example.nisaapps.Home.pertemuan_7.SeventhActivity
 import com.example.nisaapps.Home.pertemuan_9.NinthActivity
 import com.example.nisaapps.Home.photo.PhotoAdapter
@@ -52,6 +53,12 @@ class HomeFragment : Fragment() {
         (requireActivity() as AppCompatActivity).setSupportActionBar(binding.toolbar)
         (requireActivity() as AppCompatActivity).supportActionBar?.apply {
             title = "Home"
+        }
+
+
+        binding.btnToThird.setOnClickListener {
+            val intent = Intent(requireContext(), ThirdActivity::class.java)
+            startActivity(intent)
         }
 
         binding.btnToSeven.setOnClickListener {

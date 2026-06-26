@@ -10,6 +10,7 @@ import androidx.core.view.WindowInsetsCompat
 import com.example.nisaapps.R
 import com.example.nisaapps.databinding.ActivityNinthBinding
 import com.example.nisaapps.databinding.ActivitySeventhBinding
+import com.example.nisaapps.utils.NotificationHelper
 import com.google.android.material.chip.Chip
 
 class NinthActivity : AppCompatActivity() {
@@ -33,6 +34,12 @@ class NinthActivity : AppCompatActivity() {
             val selectedChipId = checkedIds.firstOrNull() // Ambil ID chip yang dipilih
             if (selectedChipId != null) {
                 val chip = group.findViewById<Chip>(selectedChipId)
+                NotificationHelper.showNotification(
+                    this, //Jika panggil di fragment maka requireContext()
+                    "Pesanan Anda",
+                    "Halo ${chip.text}, Pesanan Anda Sedang Diproses",
+                    intent
+                )
                 Toast.makeText(this, "Filter: ${chip.text}", Toast.LENGTH_SHORT).show()
                 // Lakukan logika filter di sini
             }
