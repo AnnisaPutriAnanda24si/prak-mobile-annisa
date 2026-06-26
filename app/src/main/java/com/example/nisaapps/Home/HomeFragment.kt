@@ -12,6 +12,7 @@ import androidx.appcompat.app.AlertDialog.Builder
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.nisaapps.Home.Pertemuan_13.ThirteenthActivity
 import com.example.nisaapps.Home.pertemuan_10.TenthActivity
 import com.example.nisaapps.Home.pertemuan_7.SeventhActivity
 import com.example.nisaapps.Home.pertemuan_9.NinthActivity
@@ -59,6 +60,10 @@ class HomeFragment : Fragment() {
         }
         binding.btnToNine.setOnClickListener {
             val intent = Intent(requireContext(), NinthActivity::class.java)
+            startActivity(intent)
+        }
+        binding.btnToThirdteen.setOnClickListener {
+            val intent = Intent(requireContext(), ThirteenthActivity::class.java)
             startActivity(intent)
         }
         binding.btnToTen.setOnClickListener {

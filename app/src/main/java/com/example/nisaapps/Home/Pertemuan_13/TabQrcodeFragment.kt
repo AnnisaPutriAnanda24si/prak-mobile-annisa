@@ -1,11 +1,17 @@
 package com.example.nisaapps.Home.Pertemuan_13
 
+import android.graphics.Bitmap
+import android.graphics.Color
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.example.nisaapps.R
+import com.example.nisaapps.databinding.FragmentTabQrcodeBinding
+import com.google.zxing.BarcodeFormat
+import com.google.zxing.EncodeHintType
+import com.google.zxing.qrcode.QRCodeWriter
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -18,43 +24,44 @@ private const val ARG_PARAM2 = "param2"
  * create an instance of this fragment.
  */
 class TabQrcodeFragment : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
-    }
+    private var _binding: FragmentTabQrcodeBinding? = null
+    private val binding get() = _binding!!
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
+        savedInstanceState: Bundle?,
     ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_tab_qrcode, container, false)
+        _binding = FragmentTabQrcodeBinding.inflate(inflater, container, false)
+        return binding.root
     }
 
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment TabQrcodeFragment.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            TabQrcodeFragment().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        binding.btnGenerate.setOnClickListener {
+            val text = binding.edtQrInput.text.toString().trim()
+            if (text.isEmpty()) return@setOnClickListener
+            binding.ivQrCode.setImageBitmap(createQR(text))
+        }
+    }
+
+    private fun createQR(text: String): Bitmap {
+        val writer = QRCodeWriter()
+        val matrix = writer.encode(
+            text,
+            BarcodeFormat.QR_CODE,
+            500,
+            500,
+            mapOf(EncodeHintType.CHARACTER_SET to "UTF-8")
+        )
+        return Bitmap.createBitmap(500, 500, Bitmap.Config.RGB_565).apply {
+            for (x in 0 until 500) {
+                for (y in 0 until 500) {
+                    setPixel(x, y, if (matrix.get(x, y)) Color.BLACK else Color.WHITE)
                 }
             }
+        }
+    }
+
+    override fun onDestroyView() {
+        _binding = null
     }
 }
